@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <form>
+        <input type="number" id="billValue">
+        <input type="number" id="serviceRating">     
+        <button onclick="getBillValue()">Submit Your Answers</button>
+      </form>
+
+
+   <script>
+        let billValue;
+        let serviceRating;
+        let billTotal;
+// promting the user for inputting bill value
+        
+// checking that the user input is numerical
+        function getBillValue() {
+            billValue = document.getElementById("billValue").value;
+            alert(billValue);
+            //parseInt(prompt('How much was your bill?'));
+            // while (isNaN(billValue) === true) {
+            // billValue = parseInt(prompt('Please enter a number. How much was your bill?'));
+            // };
+            getRating();
+        }
+
+        function getRating() {
+            serviceRating = document.getElementsById("serviceRating").value;
+            // prompt('Please rate your service out of 10');
+            // while (isNaN(serviceRating) == true || serviceRating < 0 || serviceRating > 10) {
+            // serviceRating = parseInt(prompt('Please enter a number. Please rate your service between 0 and 10 inclusive'));
+            // };
+            getTotalBill(billValue, serviceRating);
+
+        }
+
+        
+// prompting the user for inputting the service rating
+       
+// checking that the user input is numerical AND in the required range of 0-10
+        
+// calculating the total bill with the tip inlcuded at different tip levels (based on the service rating)
+        
+        function getTotalBill(billValue, serviceRating) {
+            if (serviceRating < 3) {
+                billTotal = billValue;
+            } else if (serviceRating < 6) {
+                billTotal = billValue * 1.1;
+            } else if (serviceRating < 8) {
+                billTotal = billValue * 1.15;
+            } else if (serviceRating <= 10) {
+                billTotal = billValue * 1.2;
+            };
+        }
+// telling the user the total value of the bill with tip included
+        getBillValue();
+        console.log(billValue);
+        alert('The total value of your bill including the recommended tip is: ' + billTotal);
+        
+    </script>
+
+</body>
+
+</html>

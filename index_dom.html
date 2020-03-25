@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+  //the way Dom's done it:
+  let billAmount;
+  let serviceRating;
+  let billWithTip;
+  let tip_amount;
+
+  function billInput() {
+    billAmount = prompt("How much was your bill?");
+  }
+
+  function getService() {
+    serviceRating = prompt("How would you rate your service today on a sxale of 1-10 (10 being excellent, 1 being very poor)");
+  }
+
+  function calculateTip(billAmount, serviceRating) {
+    if (serviceRating < 3) {
+      tip_amount = 0;
+    } else if (serviceRating < 7) {
+      tip_amount = 0.1;
+    } else if (serviceRating < 10) {
+      tip_amount = 0.2;
+    } else {
+      tip_amount = 0.4;
+    }
+    billWithTip = billAmount * Math.floor((1 + tip_amount), 00);
+    return billWithTip;
+  }
+  billInput();
+  getService();
+  calculateTip(billAmount, serviceRating);
+  alert('Bill with tip: ' + billWithTip);
+
+  </script>
+
+</body>
+
+</html>

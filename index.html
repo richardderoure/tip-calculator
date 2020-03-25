@@ -2,40 +2,47 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
 </head>
 
 <body>
-    <script>
-// promting the user for inputting bill value
-        let billValue = parseInt(prompt('How much was your bill?'));
-// checking that the user input is numerical
-        while (isNaN(billValue) === true) {
-            billValue = parseInt(prompt('Please enter a number. How much was your bill?'));
-        };
-// prompting the user for inputting the service rating
-        let service = prompt('Please rate your service out of 10');
-// checking that the user input is numerical AND in the required range of 0-10
-        while (isNaN(service) == true || service < 0 || service > 10) {
-            service = parseInt(prompt('Please enter a number. Please rate your service between 0 and 10 inclusive'));
-        };
-// calculating the total bill with the tip inlcuded at different tip levels (based on the service rating)
-        let total = 0;
-        if (service < 3) {
-            total = billValue;
-        } else if (service >= 3 && service < 6) {
-            total = billValue * 1.1;
-        } else if (service >= 6 && service < 8) {
-            total = billValue * 1.15;
-        } else if (service >= 8 && service <= 10) {
-            total = billValue * 1.2;
-        };
-// telling the user the total value of the bill with tip included
+  <script>
 
-        alert('The total value of your bill including the recommended tip is: ' + total);
-    </script>
+      // promting the user for inputting bill value
+      let billValue = parseInt(prompt('How much was your bill?'));
+      // checking that the user input is numerical
+      while (isNaN(billValue) === true) {
+        billValue = parseInt(prompt('Please enter a number. How much was your bill?'));
+      };
+      // prompting the user for inputting the service rating
+      let service = prompt('Please rate your service out of 10');
+      // checking that the user input is numerical AND in the required range of 0-10
+      while (isNaN(service) == true || service < 0 || service > 10) {
+        service = parseInt(prompt('Please enter a number. Please rate your service between 0 and 10 inclusive'));
+      };
+      // calculating the total bill with the tip inlcuded at different tip levels (based on the service rating)
+      let total = 0;
+      funtion billInput() {
+      if (service < 3) {
+        total = billValue;
+      } else if (service >= 3 && service < 6) {
+        total = billValue * 1.1;
+      } else if (service >= 6 && service < 8) {
+        total = billValue * 1.15;
+      } else if (service >= 8 && service <= 10) {
+        total = billValue * 1.2;
+      };
+      return total;
+    }
+      // telling the user the total value of the bill with tip included
+
+      alert('The total value of your bill including the recommended tip is: ' + total);
+    }
+
+    billInput();
+  </script>
 
 </body>
 

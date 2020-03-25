@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+        <input type="number" id="billValue">   
+        <button onclick="getBillValue()"><a href=indextry2page.html>Your Answers</a></button>
+       
+      
+
+
+   <script>
+       var billValue;
+        function getBillValue() {
+            billValue = document.getElementById("billValue").value;
+            document.cookie = billValue;
+      
+            //parseInt(prompt('How much was your bill?'));
+            // while (isNaN(billValue) === true) {
+            // billValue = parseInt(prompt('Please enter a number. How much was your bill?'));
+            // };
+        }
+
+
+
+        
+    </script>
+
+</body>
+
+</html>
